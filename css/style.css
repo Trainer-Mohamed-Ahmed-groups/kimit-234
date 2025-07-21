@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    height: 8000px;
+}
+
+.parent {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 4rem;
+}
+
+.child {
+    background-color: #909090;
+    width: 25%;
+}
+
+.size {
+    width: 50vw;
+    height: calc(100vh - 74px);
+    background-color: #080;
+}
+.bgExplain {
+    height: 900px;
+    /* background: url("../images/lion.jpg") no-repeat center center red; */
+    /* background-image: url("../images/lion.jpg"); */
+    background-image: linear-gradient(81deg, #00000073, #00800047), url(../images/lion.jpg);
+    /* background-repeat: no-repeat; */
+    /* background-attachment: fixed; */
+    /* background-size: cover; */
+    /* background-position: bottom right; */
+}
+.gradientExplain {
+    height: 500px;
+    width: 500px;
+    /* background: linear-gradient(45deg,blue, red 25%); */
+    /* background: repeating-linear-gradient(blue, red 25%); */
+    /* background: radial-gradient(blue , red); */
+    /* background: repeating-radial-gradient(blue , red 46%); */
+    background: conic-gradient(blue, red);
+
+    margin-inline-start: 100px;
+}
+
+.newParent p ~ .newChild {
+    background-color: #909090;
+}
+
+.pseduoExplain::first-letter {
+    color: red;
+    font-size: 2rem;
+}
+
+.pseduoExplain::first-line {
+    color: rgb(28, 223, 44);
+}
+
+.pseduoExplain::selection {
+    color: rgb(0, 4, 255);
+    background-color: brown;
+}
+
+li::marker {
+    color: blue;
+}
+
+.pseduoExplain::after {
+    content: "This is after from CSS";
+}
+
+.myUpload {
+    width: 50px;
+}
+@media (max-width: 1000px) {
+    :root {
+        font-size: 12px;
+    }
+    .child {
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        font-size: 8px;
+    }
+    .child {
+        width: 100%;
+    }
+}
+
+/*
+
+Naming conventions =>
+    employeeEmail => Camel case
+    employee_email => snake case
+    employee-email => kebab case
+    EmployeeEmail => Pascal case
+*/
