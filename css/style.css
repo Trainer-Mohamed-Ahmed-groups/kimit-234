@@ -1,100 +1,145 @@
+:root {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     box-sizing: border-box;
-    height: 8000px;
+    height: 5000px;
 }
 
-.parent {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    font-size: 4rem;
+nav {
+    position: fixed;
+    width: 100%;
+    background-color: #ccc;
+    z-index: 99;
 }
 
-.child {
-    background-color: #909090;
-    width: 25%;
+li {
+    background-color: red;
+    /* list-style: upper-alpha; */
+    /* list-style-image: url("../images/lion.jpg"); */
+    list-style-type: upper-alpha;
+    list-style-position: inside;
 }
 
-.size {
-    width: 50vw;
-    height: calc(100vh - 74px);
-    background-color: #080;
+table,
+th,
+td {
+    border: solid 1px;
 }
-.bgExplain {
-    height: 900px;
-    /* background: url("../images/lion.jpg") no-repeat center center red; */
-    /* background-image: url("../images/lion.jpg"); */
-    background-image: linear-gradient(81deg, #00000073, #00800047), url(../images/lion.jpg);
-    /* background-repeat: no-repeat; */
-    /* background-attachment: fixed; */
-    /* background-size: cover; */
-    /* background-position: bottom right; */
+
+table {
+    border-collapse: collapse;
+    caption-side: bottom;
 }
-.gradientExplain {
+.grand {
     height: 500px;
     width: 500px;
-    /* background: linear-gradient(45deg,blue, red 25%); */
-    /* background: repeating-linear-gradient(blue, red 25%); */
-    /* background: radial-gradient(blue , red); */
-    /* background: repeating-radial-gradient(blue , red 46%); */
-    background: conic-gradient(blue, red);
-
-    margin-inline-start: 100px;
+    background-color: rgb(20, 184, 165);
+    position: relative;
+}
+.parent {
+    height: 300px;
+    width: 300px;
+    background-color: #828282;
+    /* position: relative; */
+}
+.child {
+    height: 100px;
+    width: 100px;
+    background-color: rgb(33, 241, 82);
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* left: 0; */
+    /* bottom: 0; */
+}
+.child:nth-child(2) {
+    top: 25px;
+    right: 25px;
+    background-color: aquamarine;
+    z-index: 2;
+}
+.child:last-child {
+    top: 50px;
+    right: 50px;
+    background-color: rgb(27, 167, 210);
+    z-index: 1;
+}
+.stickyExplain {
+    height: 70px;
+    background-color: #b610b6;
+    position: sticky;
+    top: 0;
 }
 
-.newParent p ~ .newChild {
-    background-color: #909090;
+.overflowExplain {
+    height: 300px;
+    width: 300px;
+    background-color: #12bc2f;
+    overflow: auto;
+    text-indent: 30px;
+    line-height: 20px;
+    word-spacing: 15px;
+    letter-spacing: 5px;
 }
 
-.pseduoExplain::first-letter {
-    color: red;
-    font-size: 2rem;
+.transformExplain {
+    height: 150px;
+    width: 150px;
+    background-color: #e0c22d;
+    transition: all 0.5s;
+    margin: 50px auto;
+}
+.transformExplain:hover {
+    /* transform: translate(20px, 20px); */
+    /* transform: rotate(45deg); */
+    /* transform: scale(1.5); */
+    transform: skew(30deg);
+}
+.test {
+    height: 150px;
+    width: 150px;
+    background-color: #ccc;
+    transition: 2s all ease-in-out 3s;
 }
 
-.pseduoExplain::first-line {
-    color: rgb(28, 223, 44);
+.test:hover {
+    height: 200px;
+    width: 200px;
 }
 
-.pseduoExplain::selection {
-    color: rgb(0, 4, 255);
-    background-color: brown;
+.card {
+    width: 150px;
+    height: 250px;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    backface-visibility: hidden;
+}
+.card:hover {
+    transform: rotateY(180deg);
 }
 
-li::marker {
-    color: blue;
+.front,
+.back {
+    position: absolute;
+    inset: 0;
 }
 
-.pseduoExplain::after {
-    content: "This is after from CSS";
+.front {
+    background-color: #f00;
 }
-
-.myUpload {
-    width: 50px;
+.back {
+    background-color: #0f0;
+    transform: rotateY(180deg);
 }
-@media (max-width: 1000px) {
-    :root {
-        font-size: 12px;
-    }
-    .child {
-        width: 50%;
-    }
+.textShadowExplain {
+    text-shadow: 5px 6px 8px #f00;
 }
-
-@media (max-width: 600px) {
-    :root {
-        font-size: 8px;
-    }
-    .child {
-        width: 100%;
-    }
+.boxShadowExplain {
+    height: 100px;
+    width: 100px;
+    margin: 30px;
+    background-color: burlywood;
+    box-shadow: 12px 8px 14px 10px #00f;
 }
-
-/*
-
-Naming conventions =>
-    employeeEmail => Camel case
-    employee_email => snake case
-    employee-email => kebab case
-    EmployeeEmail => Pascal case
-*/
