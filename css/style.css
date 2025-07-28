@@ -1,100 +1,110 @@
-body {
-    margin: 0;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
     box-sizing: border-box;
-    height: 8000px;
+    font-family: "Poppins", sans-serif;
+}
+:root {
+    --white-color: #ffffff;
+    --primary-color: #0dcaf0;
+    --secondary-color: #0d6efd;
+    --section-bg-color: #f0f8ff;
+    --dark-color: #000000;
+    --navbar-bg-color: #273053;
+    --p-color: #717275;
+    --highlight-icon-color: #ff0100;
+    --main-transition: 0.5s all ease-in-out;
 }
 
-.parent {
+/*? ************************************* Common styles ************************************* */
+.container {
+    width: 75%;
+    margin: auto;
+}
+.flex {
     display: flex;
+}
+
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--main-transition);
+    text-transform: capitalize;
+}
+.active {
+    color: var(--primary-color);
+}
+/*? ************************************* Nav ************************************* */
+
+nav {
+    background-color: var(--navbar-bg-color);
+    color: var(--white-color);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+nav .container {
     justify-content: space-between;
-    flex-wrap: wrap;
-    font-size: 4rem;
+    align-items: center;
+}
+ul {
+    gap: 35px;
+    align-items: center;
 }
 
-.child {
-    background-color: #909090;
-    width: 25%;
+nav .container ul li a:hover {
+    color: var(--primary-color);
 }
-
-.size {
-    width: 50vw;
-    height: calc(100vh - 74px);
-    background-color: #080;
+nav .container ul li button {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--secondary-color);
+    color: inherit;
+    border: none;
+    font-weight: bold;
+    transition: var(--main-transition);
+    cursor: pointer;
 }
-.bgExplain {
-    height: 900px;
-    /* background: url("../images/lion.jpg") no-repeat center center red; */
-    /* background-image: url("../images/lion.jpg"); */
-    background-image: linear-gradient(81deg, #00000073, #00800047), url(../images/lion.jpg);
-    /* background-repeat: no-repeat; */
-    /* background-attachment: fixed; */
-    /* background-size: cover; */
-    /* background-position: bottom right; */
+nav .container ul li button:hover {
+    background-color: var(--primary-color);
 }
-.gradientExplain {
-    height: 500px;
-    width: 500px;
-    /* background: linear-gradient(45deg,blue, red 25%); */
-    /* background: repeating-linear-gradient(blue, red 25%); */
-    /* background: radial-gradient(blue , red); */
-    /* background: repeating-radial-gradient(blue , red 46%); */
-    background: conic-gradient(blue, red);
-
-    margin-inline-start: 100px;
-}
-
-.newParent p ~ .newChild {
-    background-color: #909090;
-}
-
-.pseduoExplain::first-letter {
-    color: red;
-    font-size: 2rem;
-}
-
-.pseduoExplain::first-line {
-    color: rgb(28, 223, 44);
-}
-
-.pseduoExplain::selection {
-    color: rgb(0, 4, 255);
-    background-color: brown;
-}
-
-li::marker {
-    color: blue;
-}
-
-.pseduoExplain::after {
-    content: "This is after from CSS";
-}
-
-.myUpload {
-    width: 50px;
-}
-@media (max-width: 1000px) {
-    :root {
-        font-size: 12px;
-    }
-    .child {
-        width: 50%;
+/*? ************************************* Media ************************************* */
+@media (max-width: 800px) {
+    .container {
+        width: 90%;
     }
 }
 
-@media (max-width: 600px) {
-    :root {
-        font-size: 8px;
-    }
-    .child {
-        width: 100%;
-    }
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    color: var(--white-color);
 }
 
-/*
-
-Naming conventions =>
-    employeeEmail => Camel case
-    employee_email => snake case
-    employee-email => kebab case
-    EmployeeEmail => Pascal case
-*/
+.hero video {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+.hero h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+.hero h1 span:first-child {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+.hero .overlay {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(#50505054, #1010f4a3);
+    z-index: -1;
+}
